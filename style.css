@@ -1,0 +1,368 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+header {
+  background-color: #04315f;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  background: url('background.jpg') no-repeat center center/cover;
+  background-color: transparent;  
+  margin: 30px auto;
+  padding: 0;                      
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: none;               
+  border-radius: 0;               
+}
+
+
+section h2 {
+  color: #081018;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+ul li a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #00264d;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+  border-radius: 8px; /* opsional: buat logo agak melengkung */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* efek bayangan */
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05); 
+}
+
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+#tentang, #layanan, #kontak {
+  background: linear-gradient(-45deg, #04315f, #005b96, #007acc, #2892d7);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: white;
+  padding: 60px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+#tentang h2, #layanan h2, #kontak h2 {
+  color: #fff;
+}
+
+#layanan ul li, #kontak ul li {
+  color: #f0f0f0;
+}
+
+#kontak a {
+  color: #ffd700;
+}
+
+#kontak a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.beranda {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('MJU/background.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.beranda .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.beranda .content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.beranda h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.beranda p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.btn-hubungi {
+  background-color: #007acc;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-hubungi:hover {
+  background-color: #005b96;
+  transform: scale(1.05);
+}
+
+
+.layanan-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.layanan-item:nth-child(1) { animation-delay: 0.2s; }
+.layanan-item:nth-child(2) { animation-delay: 0.4s; }
+.layanan-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.layanan-item {
+  background-color: rgba(255, 255, 255, 0.1); /* semi transparan */
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.layanan-item:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.layanan-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* jarak icon dan teks */
+}
+
+.layanan-icon {
+  flex-shrink: 0;
+  color: #ffd700; /* warna emas agar kontras */
+  transition: transform 0.3s ease;
+}
+
+.layanan-item:hover .layanan-icon {
+  transform: scale(1.2);
+}
+
+.layanan-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin: 12px 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.layanan-item:nth-child(1) { animation-delay: 0.2s; }
+.layanan-item:nth-child(2) { animation-delay: 0.4s; }
+.layanan-item:nth-child(3) { animation-delay: 0.6s; }
+
+.layanan-item:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.layanan-icon {
+  color: #ffd700; /* emas */
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.layanan-item:hover .layanan-icon {
+  transform: scale(1.2);
+}
+
+.layanan-item span {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #fff;
+}
+
+@keyframes fadeInSection {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-animate {
+  animation: fadeInSection 0.8s ease forwards;
+}
+
+#tentang, #layanan, #kontak {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Saat ada class .section-animate */
+.section-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.sosmed-icons a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sosmed-icons svg {
+  width: 24px;
+  height: 24px;
+  color: #ffd700; /* emas, bisa ganti sesuai tema */
+  transition: transform 0.3s ease;
+}
+
+.sosmed-icons a:hover svg {
+  transform: scale(1.2);
+}
+
+header {
+  background-color: #04315f;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+header h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #ffd700;
+}
+
+.sosmed-icons {
+  margin-top: 10px;
+}
+
+.sosmed-icons a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.sosmed-icons svg {
+  width: 24px;
+  height: 24px;
+  color: #ffd700; /* emas */
+  transition: transform 0.3s ease;
+}
+
+.sosmed-icons a:hover svg {
+  transform: scale(1.2);
+}
